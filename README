@@ -72,15 +72,16 @@ sudo nano /home/liveuser/Desktop/ez-install-script/ez-install.sh
 and change line 1 and 2 (USERNAME=your-name) and (HOSTNAME=you-choose)
 like this
 
-$ USERNAME=eli
-$ HOSTNAME=BOX 
+# USERNAME=elias
+# HOSTNAME=BOX
 
-or however you want. then
+or however you want. then save it and exit. then
 
 sudo ./ez-install.sh
 
-# this will install everything else. full auto. only stopping to ask
-# for a new root password, and a new user password.
+# this will install everything else automatically
+# only stopping to ask for a new root password
+# and a new user password.
 
 
 # if you want you can use my arch1 script to install another desktop,
