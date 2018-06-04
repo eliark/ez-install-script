@@ -38,8 +38,8 @@ arrowlinux@outlook.com
 ############################################################################
 
 # to install with EZ
-# format the drive you want arch installed to.
-# then mount it to /mnt
+format the drive you want arch installed to.
+then mount it to /mnt
 
 mount /dev/sdx0 /mnt
 
@@ -55,7 +55,7 @@ lsblk
 # then after that is finnished and everything is mounted correctly
 
 
-# in the terminal migrate to /home/liveuser/Desktop/ez-install-script
+in the terminal migrate to /home/liveuser/Desktop/ez-install-script
 
 cd /home/liveuser/Desktop/ez-install-script
 
@@ -65,7 +65,17 @@ sudo ./ez-strap-in.sh
 
 # it will install the base system 
 
-# then when that is finnished run
+# then when that is finnished
+
+sudo nano /home/liveuser/Desktop/ez-install-script/ez-install.sh
+
+and change line 1 and 2 (USERNAME=your-name) and (HOSTNAME=you-choose)
+like this
+
+$ USERNAME=eli
+$ HOSTNAME=BOX 
+
+or however you want. then
 
 sudo ./ez-install.sh
 
