@@ -10,21 +10,16 @@ pacstrap /mnt base base-devel
 genfstab -U -p /mnt > /mnt/etc/fstab && cat /mnt/etc/fstab
 cp /home/liveuser/Desktop/ez-install-script/arch1 /mnt
 #cp install-me /mnt
-cp .zshrc /mnt/root
-cp .bashrc /mnt/root
 #cp -R install-help /mnt
 cp /home/liveuser/Desktop/ez-install-script/install-yaourt.sh /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/ez-install.sh /mnt/root
-cp -R /home/liveuser/Desktop/ez-install-script/icons /mnt/root
-cp -R /home/liveuser/Desktop/ez-install-script/install-script /mnt/root
-cp /home/liveuser/Desktop/ez-install-script/.face.icon /mnt/root
-cp /home/liveuser/Desktop/ez-install-script/.face /mnt/root
-cp /home/liveuser/Desktop/ez-install-script/arch1 /mnt/root
-cp /home/liveuser/Desktop/ez-install-script/.zshrc /mnt/root
-cp /home/liveuser/Desktop/ez-install-script/.bashrc /mnt/root
-
-# depends on .zshrc and .bashrc
-# they must be in the same folder as this script
+# cp -R /home/liveuser/Desktop/ez-install-script/icons /mnt/root
+# cp -R /home/liveuser/Desktop/ez-install-script/install-script /mnt/root
+# cp /home/liveuser/Desktop/ez-install-script/.face.icon /mnt/root
+# cp /home/liveuser/Desktop/ez-install-script/.face /mnt/root
+cp /arch1 /mnt/root
+cp /.zshrc /mnt/root
+cp /.bashrc /mnt/root
 
 echo "##################################################################"
 echo ""
