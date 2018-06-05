@@ -55,17 +55,16 @@ systemctl enable NetworkManager
 #pacman -Sy --noconfirm virtualbox-guest-modules-arch virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-iso
 
 # For KDE
-pacman -S --noconfirm plasma kde-applications kde-applications-meta kde-cli-tools sddm
-systemctl enable sddm 
+#pacman -S --noconfirm plasma kde-applications kde-applications-meta kde-cli-tools sddm
+#systemctl enable sddm 
 
 # For XFCE4
 #pacman -S --noconfirm xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
 #systemctl enable lightdm
 
 # For Cinnamon
-#pacman -S --noconfirm cinnamon gdm
-
-#systemctl enable gdm
+pacman -S --noconfirm cinnamon gdm
+systemctl enable gdm
 
 
 
