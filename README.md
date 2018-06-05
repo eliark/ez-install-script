@@ -1,6 +1,6 @@
 # Created by ELIAS WALKER 
 # 
-# These programs iare free software; you can redistribute them and/or modify
+# These programs are free software; you can redistribute them and/or modify
 # them under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
@@ -38,8 +38,8 @@ arrowlinux@outlook.com
 ############################################################################
 
 # to install with EZ
-# format the drive you want arch installed to.
-# then mount it to /mnt
+format the drive you want arch installed to.
+then mount it to /mnt
 
 mount /dev/sdx0 /mnt
 
@@ -55,7 +55,7 @@ lsblk
 # then after that is finnished and everything is mounted correctly
 
 
-# in the terminal migrate to /home/liveuser/Desktop/ez-install-script
+in the terminal migrate to /home/liveuser/Desktop/ez-install-script
 
 cd /home/liveuser/Desktop/ez-install-script
 
@@ -65,16 +65,32 @@ sudo ./ez-strap-in.sh
 
 # it will install the base system 
 
-# then when that is finnished run
+# then when that is finnished
+
+sudo nano /home/liveuser/Desktop/ez-install-script/ez-install.sh
+
+and change line 1 and 2 (USERNAME=your-name) and (HOSTNAME=you-choose)
+like this
+
+# USERNAME=elias
+# HOSTNAME=BOX
+
+also, you can choose between three display environments
+starting at line 57 and going to 67. uncomment the one you want 
+as well as the line directly below it. and comment out both of the others.
+make sure that ony one display manager is uncommented. SDDM, LIGHTDM, or GDM.
+COMMENT OUT TWO OF THE THREE. your choice. you can have multiple display environments, 
+but only one display manager. once it is the way you like it save, exit, and run. 
 
 sudo ./ez-install.sh
 
-# this will install everything else. full auto. only stopping to ask
-# for a new root password, and a new user password.
+# this will install everything else automatically
+# only stopping to ask for a new root password
+# and a new user password.
 
 
 # if you want you can use my arch1 script to install another desktop,
-# or a swapfile as well as many other things. 
+# or a swapfile. there are over 50 options in arch1. 
 
 sudo ./arch1
 
