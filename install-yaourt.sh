@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# 2. Install Yaourt using AUR
+# Install Yaourt and Pamac using AUR
 cd ~
 sudo pacman -S --needed --noconfirm base-devel git wget yajl zenity
 
