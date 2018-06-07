@@ -1,11 +1,14 @@
 #!/bin/bash
 
-
+el=$(zenity --entry --text "please enter your user name?" --entry-text "eli")
+ar=$(zenity --entry --text "please enter the host (computers) name?" --entry-text "ARROW")
+zenity --entry --text "we will now install everythig for you.
+relax and have a drink.
+we will tell you when we are finnished."
 
 #USERNAME=$el
 #HOSTNAME=$ar
-el=$(zenity --entry --text "please enter your user name?" --entry-text "eli")
-ar=$(zenity --entry --text "please enter the host (computers) name?" --entry-text "ARROW")
+
 # Create locale file
 # Remove the "#" in front of the locale(s) you need, en_US.UTF-8 in my case
 ## nano /etc/locale.gen
@@ -20,8 +23,8 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
 
 # Set up the hostname (edit 2nd line to customize)
-echo "setting hostname as $HOSTNAME"
-echo $HOSTNAME> /etc/hostname
+echo "setting hostname as $ar"
+echo $ar> /etc/hostname
 
 #install bootloader
 
@@ -93,22 +96,22 @@ echo "set root password"
 passwd
 
 # Create a user (edit the first line)
-useradd -m -g users -G wheel,storage,power -s /bin/bash $USERNAME
+useradd -m -g users -G wheel,storage,power -s /bin/bash $el
 
 # Create a password for user
-echo "set password for $USERNAME"
-passwd $USERNAME
+echo "set password for $el"
+passwd $el
 
 # Add user to the sudoers group
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
-cp /root/.zshrc /home/$USERNAME
-cp /root/.bashrc /home/$USERNAME
-cp /root/arch1 /home/$USERNAME
-cp -R /root/icons /home/$USERNAME
-cp /root/install-yaourt.sh /home/$USERNAME
-cp /root/.face.icon /home/$USERNAME
-cp /root/.face /home/$USERNAME
-cp -R /root/install-script /home/$USERNAME
+cp /root/.zshrc /home/$el
+cp /root/.bashrc /home/$el
+cp /root/arch1 /home/$el
+cp -R /root/icons /home/$el
+cp /root/install-yaourt.sh /home/$el
+cp /root/.face.icon /home/$el
+cp /root/.face /home/$el
+cp -R /root/install-script /home/$el
 
 echo ""
 echo "##################################################################"
