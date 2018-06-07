@@ -117,7 +117,8 @@ echo ""
 echo "##################################################################"
 echo ""
 echo "finnished. now just run    ./install-yaourt.sh     but NOT as root"
-zenity --info --text="the instalation is finished. now run install.yaourt.sh"
+zenity --width=150 --info --text="the instalation is finishe.
+now run install.yaourt.sh"
 # Exit out of the chroot, unmount and reboot
 exit
 #umount -R /mnt
