@@ -1,8 +1,8 @@
 #!/bin/bash
 
 el=$(zenity --entry --text "please enter your user name?" --entry-text "eli")
-ar=$(zenity --entry --text "please enter the host (computers) name?" --entry-text "ARROW")
-zenity --entry --text "we will now install everythig for you.
+ar=$(zenity --entry --text "please enter the host/computers name?" --entry-text "ARROW")
+zenity --info --text "we will now install everythig for you.
 relax and have a drink.
 we will tell you when we are finnished."
 
