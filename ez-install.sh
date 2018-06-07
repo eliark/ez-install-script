@@ -1,13 +1,13 @@
 #!/bin/bash
 
+
 el=$(zenity --entry --text "please enter your user name?" --entry-text "eli")
 ar=$(zenity --entry --text "please enter the host/computers name?" --entry-text "ARROW")
-zenity --width=250 --info --text "we will now install everythig for you.
-relax and have a drink.
-we will tell you when we are finnished."
-
-#USERNAME=$el
-#HOSTNAME=$ar
+zenity --width=250 --info --text "We will now install everythig for you.
+The only thing left is the passwords.
+But that will come at the end of the install.
+We will tell you when we are ready for that.
+For now, relax and have a drink."
 
 # Create locale file
 # Remove the "#" in front of the locale(s) you need, en_US.UTF-8 in my case
@@ -61,18 +61,27 @@ systemctl start NetworkManager
 systemctl enable NetworkManager
 
 # For virtualbox install
-#pacman -Sy --noconfirm virtualbox-guest-modules-arch virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-iso
+pacman -Sy --noconfirm virtualbox-guest-modules-arch virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-iso
 
-# For KDE
-pacman -S --noconfirm plasma kde-applications kde-applications-meta kde-cli-tools sddm
-systemctl enable sddm 
+# For KDE uncomment the next line
+#pacman -S --noconfirm plasma kde-applications kde-applications-meta kde-cli-tools openbox
 
-# For XFCE4
-#pacman -S --noconfirm xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
-#systemctl enable lightdm
+## for the SDDM display manager uncomment the next two lines
+#pacman -S --noconfirm sddm sddm-kcm
+#systemctl enable sddm 
 
-# For Cinnamon
-#pacman -S --noconfirm cinnamon gdm
+# For XFCE4 uncomment the next line
+pacman -S --noconfirm xfce4 xfce4-goodies openbox
+
+## for lightDM uncomment the next two lines
+pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+systemctl enable lightdm
+
+# For Cinnamon  uncomment the next line
+#pacman -S --noconfirm cinnamon openbox
+
+## for Gnome Display Manager uncomment the next two lines
+#pacman -S --noconfirm gdm
 #systemctl enable gdm
 
 
@@ -123,3 +132,4 @@ now run install.yaourt.sh"
 exit
 #umount -R /mnt
 #reboot
+
