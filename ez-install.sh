@@ -109,6 +109,31 @@ echo "##################################################################"
 echo ""
 echo "finnished. now just run    ./install-yaourt.sh     but NOT as root"
 
+# Install Yaourt and Pamac using AUR
+cd ~
+sudo pacman -S --needed --noconfirm base-devel git wget yajl zenity
+
+git clone https://aur.archlinux.org/package-query.git
+
+cd package-query/ && makepkg -si
+
+cd ..
+
+git clone https://aur.archlinux.org/yaourt.git
+
+cd yaourt/ && makepkg -si
+
+cd ..
+
+sudo rm -dR yaourt/ package-query/
+
+zenity --info --text="yaourt install is DONE.
+Next we will install pamac
+a graohical package installer"
+yaourt -S --noconfirm pamac-aur pamac-tray-appindicator
+zenity --info --text="pamac is installed. 
+please reboot the computer."
+
 # Exit out of the chroot, unmount and reboot
 exit
 #umount -R /mnt
