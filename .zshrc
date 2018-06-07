@@ -91,18 +91,18 @@ alias rbt="reboot"
 alias p5="ping -c5 google.com"
 alias p3="ping -c3 google.com"
 alias wf="wifi-menu"
+
 ######ARCH LINUX#######< 
 alias pac="sudo pacman"
 alias pacs="sudo pacman -S"
-alias yrts="yaourt -S"
-alias yrt="yaourt"
+alias yrt="yaourt -S --noconfirm"
 alias inst="sudo pacman -S"
 alias upd="sudo pacman -Sy
-                yaourt -Sy"
+                yaourt -S --noconfirm"
 alias sup="sudo pacman -Syu
-                yaourt -Syu"
+                yaourt -Syu --noconfirm"
 alias upg="sudo pacman -Syu
-                yaourt -Syu"
+                yaourt -Syu --noconfirm"
 alias grb="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 alias del="sudo pacman -Rs"
