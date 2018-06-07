@@ -1,5 +1,11 @@
-USERNAME=eli
-HOSTNAME=ARROW
+#!/bin/bash
+
+
+
+#USERNAME=$el
+#HOSTNAME=$ar
+el=$(zenity --entry --text "please enter your user name?" --entry-text "eli")
+ar=$(zenity --entry --text "please enter the host (computers) name?" --entry-text "ARROW")
 # Create locale file
 # Remove the "#" in front of the locale(s) you need, en_US.UTF-8 in my case
 ## nano /etc/locale.gen
