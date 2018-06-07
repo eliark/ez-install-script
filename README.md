@@ -1,4 +1,4 @@
-# Created by ELIAS WALKER 
+eated by ELIAS WALKER 
 # 
 # These programs are free software; you can redistribute them and/or modify
 # them under the terms of the GNU General Public License as published by
@@ -69,18 +69,10 @@ sudo ./ez-strap-in.sh
 
 sudo nano /home/liveuser/Desktop/ez-install-script/ez-install.sh
 
-and change line 1 and 2 (USERNAME=your-name) and (HOSTNAME=you-choose)
-like this
 
-# USERNAME=elias
-# HOSTNAME=BOX
-
-also, you can choose between three display environments
-starting at line 57 and going to 67. uncomment the one you want 
-as well as the line directly below it. and comment out both of the others.
-make sure that ony one display manager is uncommented. SDDM, LIGHTDM, or GDM.
-COMMENT OUT TWO OF THE THREE. your choice. you can have multiple display environments, 
-but only one display manager. once it is the way you like it save, exit, and run. 
+# you can choose between three display environments
+# starting at line 66 and going to 85. uncomment the one you want 
+# and cment out (#) the nes you don't
 
 sudo ./ez-install.sh
 
@@ -96,5 +88,3 @@ sudo ./arch1
 
 # then just go down the list a,b,c,d,e,f
 # and install what you need or want.
- 
-
