@@ -84,7 +84,7 @@ sudo ./ez-install.sh
 # if you want you can use my arch1 script to install another desktop,
 # or a swapfile. there are over 50 options in arch1. 
 
-sudo ./arch1
+sudo ./arrow1.sh
 
 # then just go down the list a,b,c,d,e,f
 # and install what you need or want.
