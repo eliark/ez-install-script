@@ -1,32 +1,47 @@
 #!/bin/bash
+#
+# Replace "eli" with the name of your choice.
+# usernames must be all lower case letters.
+USERNAME=eli
+#
+# Replace "ARROW" with the computer name of your choice.
+HOSTNAME=ARROW
+#
+# Replace "sda" with your drive letters. run lsblk to find your drive
+# DO NOT put partition numbers here eg; (sda1) it will fail if you do.
+# only the 3 letters sda, sdb, sdc, sdd, like that.
+HARDDRIVE=sda
+#
+# Replace "es" with your keybord layout.
+# since you are reading this in english I assume you want  <us> 
+KEYBOARD=es
 
+#el=$(zenity --entry --text "please enter your user name?" --entry-text "eli")
+#ar=$(zenity --entry --text "please enter the host/computers name?" --entry-text "ARROW")
+#zenity --width=250 --info --text "We will now install everythig for you.
+#The only thing left is the passwords.
+#But that will come at the end of the install.
+#We will tell you when we are ready for that.
+#For now, relax and have a drink."
 
-el=$(zenity --entry --text "please enter your user name?" --entry-text "eli")
-ar=$(zenity --entry --text "please enter the host/computers name?" --entry-text "ARROW")
-zenity --width=250 --info --text "We will now install everythig for you.
-The only thing left is the passwords.
-But that will come at the end of the install.
-We will tell you when we are ready for that.
-For now, relax and have a drink."
-
-# Create locale file
-# Remove the "#" in front of the locale(s) you need, en_US.UTF-8 in my case
+# Create the locale
+#
+# Remove the "#" in front of the locale(s) you want
 ## nano /etc/locale.gen
 echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen
-echo e'n_US ISO-8859-1' >> /etc/locale.gen
+echo 'en_US ISO-8859-1' >> /etc/locale.gen
 
-# Save the file and generate the locales
 locale-gen
 
 # locale.conf
-echo LANG=en_US.UTF-8 > /etc/locale.conf
+echo LANG=en_US.UTF-8 >> /etc/locale.conf
 export LANG=en_US.UTF-8
 
-# Set up the hostname (edit 2nd line to customize)
-echo "setting hostname as $ar"
-echo $ar> /etc/hostname
+echo "setting hostname as $HOSTNAME"
+echo $HOSTNAME> /etc/hostname
 
-#install bootloader
+#install bootloader for UEFI un coment
+##############################################################################################
 
 #pacman -S grub-efi-x86_64
 #mkdir -p /boot/efi
@@ -39,7 +54,7 @@ echo $ar> /etc/hostname
 #grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
 
 # Install the bootloader
-# The mount command will most likely result in an error due to it being loaded already
+# The mount command will result in an error because it is already loaded.
 
 #mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 #pacman -S gummiboot
@@ -51,9 +66,10 @@ echo $ar> /etc/hostname
 # Make sure we have a network connection after we reboot
 #systemctl enable dhcpcd.service
 
+## end of UEFI script. DO NOT edit anything below this line.
+####################################################################################
 
-
-echo 'KEYMAP=es' > /etc/vconsole.conf
+echo 'KEYMAP=$KEYBOARD' > /etc/vconsole.conf
 
 pacman -Sy --noconfirm grsync gufw asunder lame terminator geany chromium firefox gparted gnome-disk-utility vlc nemo gnome-terminal guake dialog grub-bios linux-headers linux-lts linux-lts-headers wpa_supplicant wireless_tools htop screenfetch openssh gvfs gvfs-afc thunar-volman xdg-user-dirs xdg-user-dirs-gtk xorg-server xorg-xinit xorg-twm xf86-video-intel xf86-video-vesa networkmanager network-manager-applet deepin-clone zsh zsh-completions zsh-syntax-highlighting libreoffice-fresh xpdf atril vlc telegram-desktop gimp sshfs uget audacity cmake meld intel-ucode extra-cmake-modules kdebase-runtime rsync sudo 
  
@@ -94,7 +110,7 @@ timedatectl set-timezone America/Mexico_City
 
 systemctl enable sshd.service
 
-grub-install --target=i386-pc --recheck /dev/sda
+grub-install --target=i386-pc --recheck /dev/$HARDDRIVE
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -105,22 +121,22 @@ echo "set root password"
 passwd
 
 # Create a user (edit the first line)
-useradd -m -g users -G wheel,storage,power -s /bin/bash $el
+useradd -m -g users -G wheel,storage,power -s /bin/bash $USERNAME
 
 # Create a password for user
-echo "set password for $el"
-passwd $el
+echo "set password for $USERNAME"
+passwd $USERNAME
 
 # Add user to the sudoers group
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
-cp /root/.zshrc /home/$el
-cp /root/.bashrc /home/$el
-cp /root/arch1 /home/$el
-cp -R /root/icons /home/$el
-cp /root/install-yaourt.sh /home/$el
-cp /root/.face.icon /home/$el
-cp /root/.face /home/$el
-cp -R /root/install-script /home/$el
+cp /root/.zshrc /home/$USERNAME
+cp /root/.bashrc /home/$USERNAME
+cp /root/arch1 /home/$USERNAME
+cp -R /root/icons /home/$USERNAME
+cp /root/install-yaourt.sh /home/$USERNAME
+cp /root/.face.icon /home/$USERNAME
+cp /root/.face /home/$USERNAME
+cp -R /root/install-script /home/$USERNAME
 
 echo ""
 echo "##################################################################"
@@ -132,4 +148,3 @@ now run install.yaourt.sh"
 exit
 #umount -R /mnt
 #reboot
-
