@@ -19,9 +19,11 @@ cd ..
 
 sudo rm -dR yaourt/ package-query/
 
-zenity --info --text="yaourt install is DONE.
+zenity --width=200 --info --text="yaourt install is DONE.
 Next we will install pamac
-a graohical package installer"
+a graphical package installer"
+
 yaourt -S --noconfirm pamac-aur pamac-tray-appindicator
-zenity --info --text="pamac is installed. 
-please reboot the computer."
+
+zenity --width=200 --info --text="pamac is installed.
+please re-login."
