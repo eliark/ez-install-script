@@ -18,7 +18,7 @@ created by ELIAS WALKER
 ############################################################################
 
 FIRST OF ALL
-thank you for trying my distrobution.
+thank you for trying my distribution.
 
 
 
