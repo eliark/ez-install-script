@@ -1,4 +1,4 @@
-eated by ELIAS WALKER 
+created by ELIAS WALKER 
 # 
 # These programs are free software; you can redistribute them and/or modify
 # them under the terms of the GNU General Public License as published by
