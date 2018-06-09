@@ -71,7 +71,7 @@ echo $HOSTNAME> /etc/hostname
 
 echo 'KEYMAP=$KEYBOARD' > /etc/vconsole.conf
 
-pacman -Sy --noconfirm grsync gufw asunder lame terminator geany chromium firefox gparted gnome-disk-utility vlc nemo gnome-terminal guake dialog grub-bios linux-headers linux-lts linux-lts-headers wpa_supplicant wireless_tools htop screenfetch openssh gvfs gvfs-afc thunar-volman xdg-user-dirs xdg-user-dirs-gtk xorg-server xorg-xinit xorg-twm xf86-video-intel xf86-video-vesa networkmanager network-manager-applet deepin-clone zsh zsh-completions zsh-syntax-highlighting libreoffice-fresh xpdf atril vlc telegram-desktop gimp sshfs uget audacity cmake meld intel-ucode extra-cmake-modules kdebase-runtime rsync sudo 
+pacman -Sy --noconfirm grsync gufw asunder lame terminator geany chromium firefox gparted gnome-disk-utility vlc nemo gnome-terminal guake dialog grub-bios linux-headers linux-lts linux-lts-headers wpa_supplicant wireless_tools htop screenfetch openssh gvfs gvfs-afc thunar-volman xdg-user-dirs xdg-user-dirs-gtk xorg-server xorg-xinit xorg-twm xf86-video-intel xf86-video-vesa networkmanager network-manager-applet deepin-clone zsh zsh-completions zsh-syntax-highlighting libreoffice-fresh xpdf atril vlc telegram-desktop gimp sshfs uget audacity cmake meld intel-ucode extra-cmake-modules kdebase-runtime rsync sudo b43-fwcutter btrfs-progs clonezilla crda darkhttpd ddrescue dhclient dialog dmraid dnsmasq dnsutils dosfstools elinks ethtool exfat-utils f2fs-tools fsarchiver gnu-netcat gpm mc gptfdisk grml-zsh-config grub hdparm ipw2100-fw ipw2200-fw irssi lftp lsscsi mtools ndisc6 nfs-utils nilfs-utils nmap ntfs-3g ntp openconnect openssh openvpn partclone parted partimage ppp pptpclient refind-efi rp-pppoe rsync sdparm sg3_utils smartmontools tcpdump testdisk usb_modeswitch vim-minimal vpnc wget wireless_tools wpa_actiond wvdial xl2tpd zd1211-firmware boost dmidecode gptfdisk hwinfo kconfig kcoreaddons kdebase-runtime ki18n kparts kpmcore parted polkit-qt5 python qt5-svg qt5-webengine qt5ct rsync solid squashfs-tools yaml-cpp extra-cmake-modules git qt5-tools qt5-styleplugins xorg-server xorg-xinit xorg-twm virtualbox-guest-modules-arch virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-dkms virtualbox-guest-iso alsa-utils mesa intel-ucode xf86-video-intel xf86-video-vesa xf86-video-amdgpu xf86-video-nouveau base-devel wpa_supplicant gnome-keyring firefox chromium networkmanager network-manager-applet xfce4 xfce4-goodies zenity conky conky-manager xdg-user-dirs catfish mousepad os-prober gparted accountsservice lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings mate-system-monitor terminator guake xterm gnome-terminal gnome-2048 gbrainy kmahjongg gnome-mahjongg meld groovy deepin-clone gedit-plugins cmake bluefish atom reflector nemo atril leafpad pluma xdg-user-dirs bash-completion ncdu file-roller parcellite unrar p7zip mlocate htop screenfetch zsh zsh-completions zsh-syntax-highlighting libreoffice-fresh xpdf fltk emacs giggle ghex geany gimp hexchat telegram-desktop vlc putty transmission-gtk transmission-remote-gtk filezilla uget sshfs kdenlive audacity breeze-icons arc-icon-theme gnome-icon-theme human-icon-theme oxygen-icons hicolor-icon-theme tangerine-icon-theme papirus-icon-theme mate-icon-theme-faenza mate-icon-theme lxde-icon-theme gnome-icon-theme-symbolic gnome-icon-theme-extras faience-icon-theme elementary-icon-theme deepin-icon-theme arc-icon-theme adwaita-icon-theme numix-gtk-theme faenza-icon-theme adwaita-icon-theme wipe boost-libs
  
 systemctl start NetworkManager
 systemctl enable NetworkManager
@@ -79,27 +79,28 @@ systemctl enable NetworkManager
 # For virtualbox install
 pacman -Sy --noconfirm virtualbox-guest-modules-arch virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-iso
 
+#######################################
 # For KDE uncomment the next line
 #pacman -S --noconfirm plasma kde-applications kde-applications-meta kde-cli-tools openbox
 
 ## for the SDDM display manager uncomment the next two lines
 #pacman -S --noconfirm sddm sddm-kcm
 #systemctl enable sddm 
-
-# For XFCE4 uncomment the next line
-pacman -S --noconfirm xfce4 xfce4-goodies openbox
+#######################################
+## For XFCE4 uncomment the next line
+#pacman -S --noconfirm xfce4 xfce4-goodies openbox
 
 ## for lightDM uncomment the next two lines
-pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
-systemctl enable lightdm
-
-# For Cinnamon  uncomment the next line
+#pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+#systemctl enable lightdm
+########################################
+## For Cinnamon  uncomment the next line
 #pacman -S --noconfirm cinnamon openbox
 
 ## for Gnome Display Manager uncomment the next two lines
 #pacman -S --noconfirm gdm
 #systemctl enable gdm
-
+########################################
 
 
 ln -s /usr/share/zoneinfo/America/Mexico_City /etc/locatime
@@ -131,7 +132,7 @@ passwd $USERNAME
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 cp /root/.zshrc /home/$USERNAME
 cp /root/.bashrc /home/$USERNAME
-cp /root/arch1 /home/$USERNAME
+cp /root/arrow1.sh /home/$USERNAME
 cp -R /root/icons /home/$USERNAME
 cp /root/install-yaourt.sh /home/$USERNAME
 cp /root/.face.icon /home/$USERNAME
@@ -142,9 +143,9 @@ echo ""
 echo "##################################################################"
 echo ""
 echo "finnished. now just run    ./install-yaourt.sh     but NOT as root"
-zenity --width=150 --info --text="the instalation is finishe.
-now run install.yaourt.sh"
-# Exit out of the chroot, unmount and reboot
+zenity --width=200 --info --text="the instalation is finishe.
+now run ./install.yaourt.sh"
+
 exit
 #umount -R /mnt
 #reboot
