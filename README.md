@@ -71,8 +71,8 @@ sudo nano /home/liveuser/Desktop/ez-install-script/ez-install.sh
 
 
 # you can choose between three display environments
-# starting at line 66 and going to 85. uncomment the one you want 
-# and cment out (#) the nes you don't
+# starting at about line 66 and going to 85. uncomment the one you want 
+# and coment out (#) the ones you don't
 
 sudo ./ez-install.sh
 
@@ -81,8 +81,8 @@ sudo ./ez-install.sh
 # and a new user password.
 
 
-# if you want you can use my arch1 script to install another desktop,
-# or a swapfile. there are over 50 options in arch1. 
+# if you want you can use my arrow1.sh script to install another desktop,
+# or a swapfile. there are over 50 options in arrow1.sh. 
 
 sudo ./arrow1.sh
 
