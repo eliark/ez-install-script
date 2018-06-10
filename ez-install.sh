@@ -145,6 +145,10 @@ cp -R /root/.conky /home/$USERNM
 cp -R /root/.icons /home/$USERNM
 cp -R /root/.local /home/$USERNM
 cp -R /root/.themes /home/$USERNM
+cp -R /root/Pictures /home/$USERNM
+cp -R /root/Desktop /home/$USERNM
+cp -R /root/icons /home/$USERNM
+
 
 # give scripts exicution permitions
 cd /home/$USERNM/
