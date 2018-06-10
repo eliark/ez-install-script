@@ -143,8 +143,8 @@ echo ""
 echo "##################################################################"
 echo ""
 echo "finnished. now just run    ./install-yaourt.sh     but NOT as root"
-zenity --width=200 --info --text="the instalation is finishe.
-now run ./install.yaourt.sh"
+#zenity --width=200 --info --text="the instalation is finished.
+#now run ./install.yaourt.sh"
 
 exit
 #umount -R /mnt
