@@ -17,15 +17,15 @@ cp -R /home/liveuser/Desktop/ez-install-script/icons /mnt/root
 cp -R /home/liveuser/Desktop/ez-install-script/install-script /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/.face.icon /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/.face /mnt/root
-cp /arrow1.sh /mnt/root
-cp /.zshrc /mnt/root
-cp /.bashrc /mnt/root
+cp /home/liveuser/Desktop/ez-install-script/arrow1.sh /mnt/root
+cp /home/liveuser/.zshrc /mnt/root
+cp /home/liveuser/.bashrc /mnt/root
 
-cp -R /home/liveuser/.conf /mnt/root
-cp -R /home/liveuser/.font /mnt/root
+cp -R /home/liveuser/.config /mnt/root
+cp -R /home/liveuser/.fonts /mnt/root
 cp -R /home/liveuser/.conky /mnt/root
 cp -R /home/liveuser/.icons /mnt/root
-cp -R /home/liveuser/.locale /mnt/root
+cp -R /home/liveuser/.local /mnt/root
 cp -R /home/liveuser/.themes /mnt/root
 
 
@@ -40,4 +40,3 @@ zenity --width=220 --info --text "The base system is installed. Now run
      sudo ./ez-install.sh"
 # Configuring the system
 arch-chroot /mnt /bin/bash
-
