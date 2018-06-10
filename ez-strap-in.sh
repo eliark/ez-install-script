@@ -40,3 +40,4 @@ zenity --width=220 --info --text "The base system is installed. Now run
      sudo ./ez-install.sh"
 # Configuring the system
 arch-chroot /mnt /bin/bash
+
