@@ -1,0 +1,25 @@
+
+
+zenity --info
+
+zenity --width=200 --info --text="hello this is your test box"
+
+zenity --file-selection
+
+PICK=$(zenity --file-selection);geany "$PICK"
+
+zenity --question --text="Do you want to continue?"
+
+zenity --entry --text="Enter any text" 
+
+zenity --entry --text="Enter any text" --hide-text
+
+zenity --list --radiolist --column "selection" --column "Operation" FALSE ADDITION FALSE SUBTRACTION
+
+DDP=0;while [ $DDP -lt 100 ] ; do echo $DDP ;$DDP='expr $DDP + 1' ;done | zenity --progress
+
+zenity --text-info --filename=/home/eli/Desktop/example
+
+
+
+
