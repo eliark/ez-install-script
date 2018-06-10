@@ -143,6 +143,11 @@ echo ""
 echo "##################################################################"
 echo ""
 echo "finnished. now just run    ./install-yaourt.sh     but NOT as root"
+echo "So, that means copy and past the next line"
+echo "umout -R"
+echo ""
+echo "and then reboot"
+echo ""
 #zenity --width=200 --info --text="the instalation is finished.
 #now run ./install.yaourt.sh"
 
