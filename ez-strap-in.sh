@@ -14,7 +14,9 @@ cp /home/liveuser/Desktop/ez-install-script/arrow1.sh /mnt
 cp /home/liveuser/Desktop/ez-install-script/install-yaourt.sh /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/ez-install.sh /mnt/root
 cp -R /home/liveuser/Desktop/ez-install-script/icons /mnt/root
-cp -R /home/liveuser/Desktop/ez-install-script/install-script /mnt/root
+
+cp -R /home/liveuser/Desktop/ez-install-script /mnt/root
+
 cp /home/liveuser/Desktop/ez-install-script/.face.icon /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/.face /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/arrow1.sh /mnt/root
