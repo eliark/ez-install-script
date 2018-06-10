@@ -8,18 +8,26 @@
 mount -o remount,size=1G /run/archiso/cowspace
 pacstrap /mnt base base-devel
 genfstab -U -p /mnt > /mnt/etc/fstab && cat /mnt/etc/fstab
-cp /home/liveuser/Desktop/ez-install-script/arch1 /mnt
-#cp install-me /mnt
-#cp -R install-help /mnt
+
+
+cp /home/liveuser/Desktop/ez-install-script/arrow1.sh /mnt
 cp /home/liveuser/Desktop/ez-install-script/install-yaourt.sh /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/ez-install.sh /mnt/root
-# cp -R /home/liveuser/Desktop/ez-install-script/icons /mnt/root
-# cp -R /home/liveuser/Desktop/ez-install-script/install-script /mnt/root
-# cp /home/liveuser/Desktop/ez-install-script/.face.icon /mnt/root
-# cp /home/liveuser/Desktop/ez-install-script/.face /mnt/root
-cp /arch1 /mnt/root
+cp -R /home/liveuser/Desktop/ez-install-script/icons /mnt/root
+cp -R /home/liveuser/Desktop/ez-install-script/install-script /mnt/root
+cp /home/liveuser/Desktop/ez-install-script/.face.icon /mnt/root
+cp /home/liveuser/Desktop/ez-install-script/.face /mnt/root
+cp /arrow1.sh /mnt/root
 cp /.zshrc /mnt/root
 cp /.bashrc /mnt/root
+
+cp -R /home/liveuser/.conf /mnt/root
+cp -R /home/liveuser/.font /mnt/root
+cp -R /home/liveuser/.conky /mnt/root
+cp -R /home/liveuser/.icons /mnt/root
+cp -R /home/liveuser/.locale /mnt/root
+cp -R /home/liveuser/.themes /mnt/root
+
 
 echo "##################################################################"
 echo ""
