@@ -71,7 +71,7 @@ echo $HOSTNM> /etc/hostname
 
 echo 'KEYMAP=$KEYBD' > /etc/vconsole.conf
 
-pacman -Sy --noconfirm grsync gufw asunder lame terminator gnome-disk-utility grub-bios linux-headers linux-lts linux-lts-headers gvfs gvfs-afc thunar thunar-volman xdg-user-dirs-gtk zsh zsh-completions zsh-syntax-highlighting sshfs sudo b43-fwcutter btrfs-progs clonezilla crda darkhttpd ddrescue dhclient dialog dmraid dnsmasq dnsutils dosfstools elinks ethtool exfat-utils f2fs-tools fsarchiver gnu-netcat gpm mc grml-zsh-config grub hdparm ipw2100-fw ipw2200-fw irssi lftp lsscsi mtools ndisc6 nfs-utils nilfs-utils nmap ntfs-3g ntp openconnect openssh openvpn partclone partimage ppp pptpclient refind-efi rp-pppoe sdparm sg3_utils smartmontools tcpdump testdisk usb_modeswitch vim-minimal vpnc wget wireless_tools wpa_actiond wvdial xl2tpd zd1211-firmware boost dmidecode gptfdisk hwinfo kconfig kcoreaddons kdebase-runtime ki18n kparts kpmcore parted polkit-qt5 python qt5-svg qt5-webengine qt5ct rsync solid squashfs-tools yaml-cpp extra-cmake-modules git qt5-tools qt5-styleplugins xorg-server xorg-xinit xorg-twm virtualbox-guest-modules-arch virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-dkms virtualbox-guest-iso alsa-utils mesa intel-ucode xf86-video-intel xf86-video-vesa xf86-video-amdgpu xf86-video-nouveau base-devel wpa_supplicant gnome-keyring firefox chromium networkmanager network-manager-applet xfce4 xfce4-goodies zenity conky conky-manager catfish mousepad os-prober gparted accountsservice lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings mate-system-monitor guake xterm gnome-terminal gnome-2048 gbrainy kmahjongg gnome-mahjongg meld groovy deepin-clone gedit-plugins cmake bluefish atom reflector nemo atril leafpad pluma xdg-user-dirs bash-completion ncdu file-roller parcellite unrar p7zip mlocate htop screenfetch  libreoffice-fresh xpdf fltk emacs giggle ghex geany gimp hexchat telegram-desktop vlc putty transmission-gtk transmission-remote-gtk filezilla uget kdenlive audacity breeze-icons gnome-icon-theme human-icon-theme oxygen-icons hicolor-icon-theme tangerine-icon-theme papirus-icon-theme mate-icon-theme-faenza mate-icon-theme lxde-icon-theme gnome-icon-theme-symbolic gnome-icon-theme-extras elementary-icon-theme deepin-icon-theme arc-icon-theme numix-gtk-theme faenza-icon-theme adwaita-icon-theme wipe boost-libs
+pacman -Sy --noconfirm grsync gufw asunder lame terminator gnome-disk-utility grub-bios linux-headers linux-lts linux-lts-headers gvfs gvfs-afc thunar thunar-volman xdg-user-dirs-gtk zsh zsh-completions zsh-syntax-highlighting sshfs sudo b43-fwcutter btrfs-progs clonezilla crda darkhttpd ddrescue dhclient dialog dmraid dnsmasq dnsutils dosfstools elinks ethtool exfat-utils f2fs-tools fsarchiver gnu-netcat gpm mc grml-zsh-config grub hdparm ipw2100-fw ipw2200-fw irssi lftp lsscsi mtools ndisc6 nfs-utils nilfs-utils nmap ntfs-3g ntp openconnect openssh openvpn partclone partimage ppp pptpclient refind-efi rp-pppoe sdparm sg3_utils smartmontools tcpdump testdisk usb_modeswitch vim-minimal vpnc wget wireless_tools wpa_actiond wvdial xl2tpd zd1211-firmware boost dmidecode gptfdisk hwinfo kconfig kcoreaddons kdebase-runtime ki18n kparts kpmcore parted polkit-qt5 python qt5-svg qt5-webengine qt5ct rsync solid squashfs-tools yaml-cpp extra-cmake-modules git qt5-tools qt5-styleplugins xorg-server xorg-xinit xorg-twm virtualbox-guest-modules-arch virtualbox-host-modules-arch virtualbox-guest-utils virtualbox-guest-iso alsa-utils mesa intel-ucode xf86-video-intel xf86-video-vesa xf86-video-amdgpu xf86-video-nouveau base-devel wpa_supplicant gnome-keyring firefox chromium networkmanager network-manager-applet xfce4 xfce4-goodies zenity conky conky-manager catfish mousepad os-prober gparted accountsservice lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings mate-system-monitor guake xterm gnome-terminal gnome-2048 gbrainy kmahjongg gnome-mahjongg meld groovy deepin-clone gedit-plugins cmake bluefish atom reflector nemo atril leafpad pluma xdg-user-dirs bash-completion ncdu file-roller parcellite unrar p7zip mlocate htop screenfetch  libreoffice-fresh xpdf fltk emacs giggle ghex geany gimp hexchat telegram-desktop vlc putty transmission-gtk transmission-remote-gtk filezilla uget kdenlive audacity breeze-icons gnome-icon-theme human-icon-theme oxygen-icons hicolor-icon-theme tangerine-icon-theme papirus-icon-theme mate-icon-theme-faenza mate-icon-theme lxde-icon-theme gnome-icon-theme-symbolic gnome-icon-theme-extras elementary-icon-theme deepin-icon-theme arc-icon-theme numix-gtk-theme faenza-icon-theme adwaita-icon-theme wipe boost-libs
  
 systemctl start NetworkManager
 systemctl enable NetworkManager
@@ -88,11 +88,11 @@ pacman -Sy --noconfirm virtualbox-guest-modules-arch virtualbox-host-modules-arc
 #systemctl enable sddm 
 #######################################
 ## For XFCE4 uncomment the next line
-#pacman -S --noconfirm xfce4 xfce4-goodies openbox
+pacman -S --noconfirm xfce4 xfce4-goodies openbox
 
 ## for lightDM uncomment the next two lines
-#pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
-#systemctl enable lightdm
+pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+systemctl enable lightdm
 ########################################
 ## For Cinnamon  uncomment the next line
 #pacman -S --noconfirm cinnamon openbox
@@ -139,11 +139,11 @@ cp /root/install-yaourt.sh /home/$USERNM
 cp /root/.face.icon /home/$USERNM
 cp /root/.face /home/$USERNM
 cp -R /root/ez-install-script /home/$USERNM
-cp -R /root/.conf /home/$USERNM
-cp -R /root/.font /home/$USERNM
+cp -R /root/.config /home/$USERNM
+cp -R /root/.fonts /home/$USERNM
 cp -R /root/.conky /home/$USERNM
 cp -R /root/.icons /home/$USERNM
-cp -R /root/.locale /home/$USERNM
+cp -R /root/.local /home/$USERNM
 cp -R /root/.themes /home/$USERNM
 
 # give scripts exicution permitions
