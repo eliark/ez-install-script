@@ -13,13 +13,13 @@ genfstab -U -p /mnt > /mnt/etc/fstab && cat /mnt/etc/fstab
 cp /home/liveuser/Desktop/ez-install-script/arrow1.sh /mnt
 cp /home/liveuser/Desktop/ez-install-script/install-yaourt.sh /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/ez-install.sh /mnt/root
-cp -R /home/liveuser/Desktop/ez-install-script/icons /mnt/root
 
 cp -R /home/liveuser/Desktop/ez-install-script /mnt/root
 
 cp /home/liveuser/Desktop/ez-install-script/.face.icon /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/.face /mnt/root
 cp /home/liveuser/Desktop/ez-install-script/arrow1.sh /mnt/root
+
 cp /home/liveuser/.zshrc /mnt/root
 cp /home/liveuser/.bashrc /mnt/root
 
@@ -30,6 +30,12 @@ cp -R /home/liveuser/.icons /mnt/root
 cp -R /home/liveuser/.local /mnt/root
 cp -R /home/liveuser/.themes /mnt/root
 
+cp -R /home/liveuser/Desktop /mnt/root
+cp -R /home/liveuser/Pictures /mnt/root
+cp -R /home/liveuser/icons /mnt/root
+
+
+
 
 echo "##################################################################"
 echo ""
@@ -38,7 +44,7 @@ echo ""
 echo "./ez-install.sh"
 echo ""
 echo ""
-zenity --width=220 --info --text "The base system is installed. Now run 
+zenity --width=250 --info --text "The base system is installed. Now run 
      sudo ./ez-install.sh"
 # Configuring the system
 arch-chroot /mnt /bin/bash
