@@ -47,7 +47,7 @@ alias down="cd ~/Downloads"
 alias temp="cd ~/Templates"
 alias vide="cd ~/Videos"
 alias pict="cd ~/Pictures"
-alias lab="cd ~/Templates/GitLab"
+alias lab="cd ~/Git-Stuff/GitLab/"
 
 
 
