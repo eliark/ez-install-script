@@ -39,6 +39,18 @@ alias snan="sudo nano"
 alias ..="cd .."
 alias ...="cd ../cd .."
 
+alias desk="cd ~/Desktop"
+alias docu="cd ~/Documents"
+alias publ="cd ~/Public"
+alias musi="cd ~/Music"
+alias down="cd ~/Downloads"
+alias temp="cd ~/Templates"
+alias vide="cd ~/Videos"
+alias pict="cd ~/Pictures"
+alias lab="cd ~/Templates/GitLab"
+
+
+
 ######ARCH LINUX#######< 
 alias pac="sudo pacman"
 alias pacs="sudo pacman -S"
