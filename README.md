@@ -27,6 +27,14 @@ it is not needed when using sudo.
 
 liveuser needs no password as sudo
 
+to avoid the password use
+
+sudo su
+
+or
+
+sudo
+
 
 ARROW Linux is under development. so dont expect everthing to work perfectly. 
 if you find any bugs or have any suggestions you can contact me at 
