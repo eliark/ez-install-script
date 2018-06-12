@@ -7,7 +7,7 @@
 zenity --question --height=50 --width=450 --title="$title" --text "Welcome to the Arrow Installer.\n\nIt is necessary\nto have the drive you want\nArrow installed on mounted at\n /mnt. \nthis will faill if it is not.\nAre you ready to begin?\n\nClick 'yes' to begin or 'no' to exit."
 
 if [ "$?" = "1" ]
-	then exit
+	then zenity --info --height=50 --width=200 --title="$title" --text "The installer will now close.\nNo changes have been made.\nClick ok to exit." && exit
 fi
 mount -o remount,size=1G /run/archiso/cowspace
 pacstrap /mnt base base-devel
