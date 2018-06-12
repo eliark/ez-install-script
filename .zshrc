@@ -92,6 +92,16 @@ alias p5="ping -c5 google.com"
 alias p3="ping -c3 google.com"
 alias wf="wifi-menu"
 
+
+alias desk="cd ~/Desktop"
+alias docu="cd ~/Documents"
+alias publ="cd ~/Public"
+alias musi="cd ~/Music"
+alias down="cd ~/Downloads"
+alias temp="cd ~/Templates"
+alias vide="cd ~/Videos"
+alias pict="cd ~/Pictures"
+
 ######ARCH LINUX#######< 
 alias pac="sudo pacman"
 alias pacs="sudo pacman -S"
